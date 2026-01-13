@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+.global-logo {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  width: 48px; /* adjust */
+  height: auto;
+  z-index: 9999; /* always on top */
+  pointer-events: auto;
+}
+
+.bmw {
+  position: fixed;
+  bottom: 30px;
+  left: 120px;
+  color: #ffffff;
+  z-index: 9999; /* always on top */
+}
+
+.side-menu-new {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  width: 100px;
+  z-index: 99;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+.side-x {
+  margin-top: 30px;
+}
+.side-ru {
+  margin-bottom: 30px;
+}
+.side-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.side-icons img {
+  width: 40px;
+  height: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.side-icons img:hover {
+  opacity: 1;
+  transform: translateX(6px);
+}
+
+.container {
+  position: relative;
+  width: 900vw;
+  height: 100vh;
+  transition: transform 0.8s ease-in-out;
+  display: flex;
+}
+
+.page {
+  width: 100vw;
+  height: 100dvh;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.home-page {
+  inset: 0;
+  background: url("../assets/home-bg.png") center / cover no-repeat;
+  z-index: 1;
+}
+
+.side-menu {
+  grid-column: 3 / 6;
+  display: flex;
+  align-items: center;
+}
+
+.side-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: lighter;
+  color: white;
+}
+
+li {
+  opacity: 0.85;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+li:hover {
+  opacity: 1;
+  transform: translateX(6px);
+}
+
+.diagonal-left {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 15, 30, 0.9),
+    rgba(10, 15, 30, 0.75)
+  );
+
+  clip-path: polygon(0 0, 66.66% 0, 33.33% 100%, 0 100%);
+
+  z-index: 2;
+}
+.model-page {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background:
+    /* top-left cool glow */ radial-gradient(
+      1200px 800px at 20% 20%,
+      rgba(69, 7, 70, 0.95),
+      rgba(0, 0, 0, 0)
+    ),
+    /* bottom-right warm glow */
+      radial-gradient(
+        1200px 800px at 80% 80%,
+        rgba(0, 0, 0, 0.45),
+        rgba(69, 7, 70, 0.95)
+      ),
+    /* base color */ linear-gradient(135deg, #000000, #000000);
+}
+
+.about {
+  grid-column: 2 / 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-h1 {
+  margin-bottom: 30px;
+  color: white;
+  letter-spacing: 2px;
+}
+.about-p {
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+.diagonal-stage {
+  z-index: 9999;
+  margin-left: 320px;
+}
+
+.car-image {
+  height: 600px;
+}
+
+.diagonal-left-model-page {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: absolute;
+  inset: 0;
+  background:
+    /* top-left cool glow */ radial-gradient(
+      1200px 800px at 20% 20%,
+      rgba(0, 0, 0, 0),
+      rgba(69, 7, 70, 0.95)
+    ),
+    /* bottom-right warm glow */
+      radial-gradient(
+        1200px 800px at 80% 80%,
+        rgba(69, 7, 70, 0.95),
+        rgba(0, 0, 0, 0.45)
+      ),
+    /* base color */ linear-gradient(135deg, #000000, #000000);
+
+  clip-path: polygon(0 0, 66.66% 0, 33.33% 100%, 0 100%);
+
+  z-index: 2;
+}
+
+.bottom-menu {
+  position: absolute;
+  bottom: 30px;
+  right: 120px;
+  z-index: 5;
+}
+
+.bottom-menu-list {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.bottom-menu-list li {
+  position: relative;
+  cursor: pointer;
+}
+
+.bottom-menu-list li:not(:last-child)::after {
+  content: "/";
+  margin-left: 14px;
+  color: red;
+}

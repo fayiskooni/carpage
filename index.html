@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMW</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <img src="assets/logo.png" alt="Logo" class="global-logo" />
+    <div class="side-menu-new">
+      <div class="side-x">x</div>
+      <div class="side-icons">
+        <img src="assets/linkedin.png" alt="linkedin" />
+        <img src="assets/instagram.png" alt="instagram" />
+        <img src="assets/facebook.png" alt="facebook" />
+        <img src="assets/youtube.png" alt="youtube" />
+      </div>
+      <div class="side-ru">Ru</div>
+    </div>
+    <div class="bmw">bmw.ru</div>
+    <div class="container">
+      <section class="page home-page">
+        <div class="diagonal-left">
+          <div class="side-menu">
+            <ul class="side-menu-items">
+              <li>About Model</li>
+              <li>Interior & Exterior</li>
+              <li>Specifications</li>
+              <li>Test Drive</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="page model-page">
+        <div class="diagonal-left-model-page">
+          <div class="about">
+            <h1 class="about-h1">ATHLETIC COUPÉ SILHOUETTE</h1>
+            <p class="about-p">
+              A vehicle with sculpted lines and a smoothly sloping coupé roof,
+              combined with exclusive light-alloy wheels and aerodynamic M
+              exterior mirrors, radiates concentrated sporting energy. The
+              elongated silhouette culminates in a striking rear end that
+              embodies restrained power.
+            </p>
+          </div>
+        </div>
+        <div class="diagonal-stage">
+          <img src="assets/car.png" alt="BMW Coupe" class="car-image" />
+        </div>
+        <nav class="bottom-menu">
+          <ul class="bottom-menu-list">
+            <li>BODY</li>
+            <li>HEADLIGHTS</li>
+            <li>FRONT</li>
+            <li>REAR</li>
+            <li>WHEELS</li>
+          </ul>
+        </nav>
+      </section>
+      <section class="page interior-page">...</section>
+      <section class="page specs-page">...</section>
+      <section class="page contact-page">...</section>
+      <section class="page model-pages">...</section>
+      <section class="page interior-page">...</section>
+      <section class="page specs-page">...</section>
+      <section class="page contact-page">...</section>
+      <section class="page contact-page">...</section>
+    </div>
+  </body>
+
+  <script>
+    let currentPage = 0;
+    const totalPages = document.querySelectorAll(".page").length;
+    const container = document.querySelector(".container");
+    let isScrolling = false;
+
+    window.addEventListener("wheel", (e) => {
+      if (isScrolling) return;
+
+      if (e.deltaY > 0 && currentPage < totalPages - 1) {
+        currentPage++;
+      } else if (e.deltaY < 0 && currentPage > 0) {
+        currentPage--;
+      }
+
+      isScrolling = true;
+      container.style.transform = `translateX(-${currentPage * 100}vw)`;
+
+      setTimeout(() => {
+        isScrolling = false;
+      }, 900);
+    });
+  </script>
+
+</html>
