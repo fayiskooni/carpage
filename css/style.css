@@ -62,7 +62,7 @@
 
 .container {
   position: relative;
-  width: 900vw;
+  width: 800vw;
   height: 100vh;
   transition: transform 0.8s ease-in-out;
   display: flex;
@@ -152,6 +152,22 @@ li:hover {
     /* base color */ linear-gradient(135deg, #000000, #000000);
 }
 
+.parallelogram-stage {
+  position:relative;
+  left: 334px;
+  top: 320px;
+  width: 650px;
+  height: 330px;
+  overflow: hidden;
+  clip-path: polygon(28% 0%, 100% 0%, 72% 100%, 0% 100%);
+}
+
+.parallelogram-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .about {
   grid-column: 2 / 6;
   display: flex;
@@ -162,7 +178,7 @@ li:hover {
 .about-h1 {
   margin-bottom: 30px;
   color: white;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 .about-p {
   align-items: center;
@@ -178,6 +194,8 @@ li:hover {
 }
 
 .car-image {
+  position: relative;
+  bottom: 150px;
   height: 600px;
 }
 
@@ -236,4 +254,144 @@ li:hover {
   content: "/";
   margin-left: 14px;
   color: red;
+}
+
+.interior-exterior {
+  background: url("../assets/exterior.jpeg") right / cover no-repeat;
+}
+
+.diagonal-interior {
+  position: absolute;
+  inset: 0;
+  background: url("../assets/interior.jpg") right / cover no-repeat;
+
+  clip-path: polygon(0 0, 66.66% 0, 33.33% 100%, 0 100%);
+
+  z-index: 2;
+}
+.interior {
+  position: absolute;
+  bottom: 30px;
+  right: 120px;
+  z-index: 5;
+  color: white;
+}
+
+.exterior-light {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background:
+    /* top-left cool glow */ radial-gradient(
+      1200px 800px at 20% 20%,
+      rgba(69, 7, 70, 0.95),
+      rgba(0, 0, 0, 0)
+    ),
+    /* bottom-right warm glow */
+      radial-gradient(
+        1200px 800px at 80% 80%,
+        rgba(0, 0, 0, 0.45),
+        rgba(69, 7, 70, 0.95)
+      ),
+    /* base color */ linear-gradient(135deg, #000000, #000000);
+}
+
+.parallelogram-head-light {
+  z-index: 99;
+  position:relative;
+  left:100px;
+  top: 50px;
+  height: 220px;
+  overflow: hidden;
+  clip-path: polygon(26% 0%, 90% 0%, 71% 100%, 7% 100%);
+}
+
+.parallelogram-head-light img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.parallelogram-tail-light {
+  position:relative;
+  left: 100px;
+  top: 0px;
+  width: 650px;
+  height: 250px;
+  overflow: hidden;
+  clip-path: polygon(36% 15%, 100% 15%, 79% 100%, 15% 100%);
+}
+
+.parallelogram-tail-light img {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+}
+
+.engine-page {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* blurred background */
+.engine-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/engine-bg.jpg") center / cover no-repeat;
+  filter: blur(10px);
+  transform: scale(1.1); /* prevents blur edges */
+  z-index: -1;
+}
+
+.interior-page {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: url("../assets/interior-custom.jpg") center / cover no-repeat;
+}
+
+.interior-cluster {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* blurred background */
+.interior-cluster::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/interior-custom.jpg") center / cover no-repeat;
+  filter: blur(4px);
+  transform: scale(1.1); /* prevents blur edges */
+  z-index: -1;
+}
+
+.test-drive {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: url("../assets/test.jpg") center / cover no-repeat;
 }
